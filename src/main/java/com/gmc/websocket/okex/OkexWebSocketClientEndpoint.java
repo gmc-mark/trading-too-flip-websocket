@@ -12,7 +12,6 @@ import com.gmc.websocket.repository.WebSocketOrderbookRepository;
 import com.gmc.websocket.repository.WebSocketTickerRepository;
 import com.gmc.websocket.schedualer.JobSetting;
 import com.gmc.websocket.service.WebSocketService;
-import com.gmc.websocket.service.impl.WebSocketServiceImpl;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONArray;

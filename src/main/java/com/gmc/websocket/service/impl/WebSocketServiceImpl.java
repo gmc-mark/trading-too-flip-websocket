@@ -4,7 +4,6 @@ import com.gmc.websocket.okex.OkexWebSocketClientEndpoint;
 import com.gmc.websocket.repository.WebSocketOrderbookRepository;
 import com.gmc.websocket.service.WebSocketService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
 import javax.websocket.ContainerProvider;
