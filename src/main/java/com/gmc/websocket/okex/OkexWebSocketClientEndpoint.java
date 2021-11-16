@@ -10,6 +10,7 @@ import com.gmc.websocket.domain.WebSocketTicker;
 import com.gmc.websocket.repository.FlipCurrencyRepository;
 import com.gmc.websocket.repository.WebSocketOrderbookRepository;
 import com.gmc.websocket.repository.WebSocketTickerRepository;
+import com.gmc.websocket.schedualer.JobSetting;
 import com.gmc.websocket.service.WebSocketService;
 import com.gmc.websocket.service.impl.WebSocketServiceImpl;
 import lombok.SneakyThrows;
@@ -40,6 +41,7 @@ public class OkexWebSocketClientEndpoint {
     private WebSocketTickerRepository webSocketTickerRepository;
     private FlipCurrencyRepository currencyRepository;
     private WebSocketService webSocketService;
+    private JobSetting jobSetting;
 
     @OnOpen
     @SneakyThrows
@@ -242,10 +244,11 @@ public class OkexWebSocketClientEndpoint {
         log.info("okex websocket onClose");
         this.executor.shutdownNow();
 
-        TimeUnit.SECONDS.sleep(1000);
+//        webSocketService = (WebSocketServiceImpl) BeanUtils.getBean(WebSocketServiceImpl.class);
+//        webSocketService.okexWebSocket();
 
-        webSocketService = (WebSocketServiceImpl) BeanUtils.getBean(WebSocketServiceImpl.class);
-        webSocketService.okexWebSocket();
+        jobSetting = (JobSetting) BeanUtils.getBean(JobSetting.class);
+        jobSetting.start();
     }
 
 }
