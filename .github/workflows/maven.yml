@@ -22,4 +22,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
           AWS_S3_ENDPOINT: kr.object.fin-ncloudstorage.com
-          SOURCE_DIR: ./deploypublic'      # optional: defaults to entire repository
+          SOURCE_DIR: ./deploy'      # optional: defaults to entire repository
