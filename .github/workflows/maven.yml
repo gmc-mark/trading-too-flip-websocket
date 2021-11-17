@@ -37,10 +37,7 @@ jobs:
       run: zip -r ./springboor-with-githubaction.zip ./deploy
 
     - name: Upload artifact to S3
-    - uses: actions/checkout@master
     - uses: jakejarvis/s3-sync-action@master
-      with:
-        args: --acl public-read --follow-symlinks --delete
       env:
         AWS_S3_BUCKET: websocket
         AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
