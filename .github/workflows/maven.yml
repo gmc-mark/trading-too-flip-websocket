@@ -37,4 +37,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
           AWS_S3_ENDPOINT: https://kr.object.fin-ncloudstorage.com
-          SOURCE_DIR: /home/runner/work/trading-too-flip-websocket/trading-too-flip-websocket/target/trading-too-flip-websocket-0.0.1.war
+          SOURCE_DIR: ./target/trading-too-flip-websocket-0.0.1.war
