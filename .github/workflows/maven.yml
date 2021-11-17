@@ -30,6 +30,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: dd
+        run: ls
       - uses: actions/checkout@master
       - uses: jakejarvis/s3-sync-action@v0.5.1
         with:
@@ -40,3 +42,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
           AWS_S3_ENDPOINT: https://kr.object.fin-ncloudstorage.com
           SOURCE_DIR: ./target/trading-too-flip-websocket-0.0.1.war
+
