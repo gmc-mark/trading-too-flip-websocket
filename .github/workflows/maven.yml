@@ -21,4 +21,4 @@ jobs:
           AWS_S3_BUCKET: websocket
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
-          AWS_S3_ENDPOINT: kr.object.fin-ncloudstorage.com
+          AWS_S3_ENDPOINT:  http://kr.object.fin-ncloudstorage.com
