@@ -30,7 +30,7 @@ jobs:
 
       # Jar 파일 복사
     - name: Copy Jar
-      run: cp target/*.war ./deploy
+      run: cp ./build/libs/*.war ./deploy
 
       # 파일 압축
     - name: Make zip file
@@ -46,7 +46,7 @@ jobs:
         # aws secret access key
         aws_secret_access_key: ${{ secrets.SECRET_KEY }}
         # aws bucket name
-        aws_bucket: websocket
+        aws_bucket: kr.object.fin-ncloudstorage.com
         # directory to upload
         source_dir: ./deploy
         # destination directory for upload
