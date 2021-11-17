@@ -30,7 +30,7 @@ jobs:
 
       # Jar 파일 복사
     - name: Copy Jar
-      run: cp ./build/libs/*.war ./deploy
+      run: cp target/*.war ./deploy
 
       # 파일 압축
     - name: Make zip file
