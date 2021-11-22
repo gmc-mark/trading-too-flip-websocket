@@ -36,6 +36,7 @@ jobs:
         run: echo ${{ secrets.AWS_ACCESS_KEY_ID }}
       - name: Command
         run: echo ${{ secrets.SSH_KEY_FLIP }}
+        
       - name: SSH
         uses: webfactory/ssh-agent@v0.5.4
         with:
