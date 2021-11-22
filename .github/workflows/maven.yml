@@ -33,9 +33,12 @@ jobs:
           DEST_DIR: deploy
           SOURCE_DIR: ./deploy
       - name: SSH
-        uses: webfactory/ssh-agent@v0.5.4
+        uses: garygrossgarten/github-action-ssh@release
         with:
-          ssh-private-key: ${{ secrets.SSH_KEY_FLIP }}
+          command: ls -a
+          host: 221.168.36.115
+          username: gmc
+          privateKey: ${{ secrets.SSH_KEY_FLIP}}
       - name: Command
         run: |
           whoami
