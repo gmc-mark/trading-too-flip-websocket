@@ -32,9 +32,13 @@ jobs:
           AWS_S3_ENDPOINT: https://kr.object.fin-ncloudstorage.com
           DEST_DIR: deploy
           SOURCE_DIR: ./deploy
+      - name: Command
+        run: echo ${{ secrets.AWS_ACCESS_KEY_ID }}
+      - name: Command
+        run: echo ${{ secrets.SSH_KEY_FLIP }}
       - name: SSH
         uses: webfactory/ssh-agent@v0.5.4
         with:
-          ssh-private-ssh: ${{ secrets.SSH_KEY_FLIP }}
+          ssh-private-key: ${{ secrets.SSH_KEY_FLIP }}
       - name: Command
         run: whoami
